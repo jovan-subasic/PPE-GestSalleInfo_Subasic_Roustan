@@ -3,7 +3,7 @@ function controleurPrincipal($action) {
     $lesActions = array();
     $lesActions["defaut"] = "accueil.php";
     $lesActions["accueil"] = "accueil.php";
-    //$lesActions[]
+    $lesActions["salleinfo"]="afficheSalleInfo.php";
 
 
     if (array_key_exists($action, $lesActions)) {
