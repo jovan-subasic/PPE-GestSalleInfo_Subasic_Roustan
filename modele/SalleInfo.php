@@ -2,12 +2,14 @@
 
 class SalleInfo 
 {
+    private $id;
     private $nSalle;
     private $nomSalle;
     private $nbPoste;
     private $indIP;
     
-    public function __construct($nSalle, $nomSalle, $nbPoste, $indIP) {
+    public function __construct($id, $nSalle, $nomSalle, $nbPoste, $indIP) {
+        $this->id = $id;
         $this->nSalle =  $nSalle;
         $this->nomSalle = $nomSalle;
         $this->nbPoste = $nbPoste;
@@ -16,6 +18,10 @@ class SalleInfo
     }
     
     //GET
+    public function getId() {
+        return $this->id;
+    }
+
     public function getNSalle() {
         return $this->nSalle;
     }
@@ -35,7 +41,11 @@ class SalleInfo
     
     
     //SET
-    public function setId($nSalle): void {
+    public function setId($id): void {
+        $this->nSalle = $id;
+    }
+
+    public function setNSalle($nSalle): void {
         $this->nSalle = $nSalle;
     }
 
@@ -43,11 +53,11 @@ class SalleInfo
         $this->nomSalle = $nomSalle;
     }
 
-    public function setId($nbPoste): void {
+    public function setNbPoste($nbPoste): void {
         $this->nbPoste = $nbPoste;
     }
 
-    public function setId($indIP): void {
+    public function setIndIP($indIP): void {
         $this->indIP = $indIP;
     }
 
