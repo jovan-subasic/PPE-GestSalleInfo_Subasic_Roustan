@@ -10,7 +10,7 @@ class SalleInfoManager extends Manager
         $id = (int) $id;
         $q = $this->getPDO()->query('SELECT id, nSalle, nomSalle, nbPoste, indIP, room_name, sort_key, description, capacity  FROM salle inner join mrbs_room on mrbs_room.id = salle.id ');
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
-        return new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'] );
+        return new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'], $donnees['room_name'], $donnees['sort_key'], $donnees['description'], $donnees['capacity'] );
     }
   
     public function getList() //instancie une collection d'objets salles
@@ -19,7 +19,7 @@ class SalleInfoManager extends Manager
         $q = $this->getPDO()->query('SELECT id, nSalle, nomSalle, nbPoste, indIP, room_name, sort_key, description, capacity  FROM salle inner join mrbs_room on mrbs_room.id = salle.id ORDER BY nom');
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $sallesinfos[$donnees['id']] = new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'] );
+            $sallesinfos[$donnees['id']] = new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'], $donnees['room_name'], $donnees['sort_key'], $donnees['description'], $donnees['capacity'] );
         }
         return $salleinfos;
     }
