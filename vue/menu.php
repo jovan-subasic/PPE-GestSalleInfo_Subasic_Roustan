@@ -8,21 +8,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="./?action=accueil">Accueil <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./?action=liaisons">Liste des Liaisons</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./?action=tarifs">Tarifs des Liaisons</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./?action=traversees">Traversées</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./?action=bateaux">Bateaux</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./?action=ports">Ports</a>
-      </li>
     </ul>
   </div>
 </nav>
