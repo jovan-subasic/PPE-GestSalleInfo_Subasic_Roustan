@@ -8,7 +8,7 @@ include_once "$racine/modele/bd.liaison.inc.php";
 //require_once("racine/modele/SalleInfoManager.php");
 $titre= "Liste des salles";
 //$salleinfoManager= new SalleInfoManager();
-//$salleinfos=$salleinfoManager->getList();
+$salleinfos=$salleinfoManager->getList();
 
 include "$racine/vue/header.php";
 //if (isLoggedOn()){
