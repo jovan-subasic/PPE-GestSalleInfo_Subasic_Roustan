@@ -1,3 +1,6 @@
+<?php
+  //var_dump($titre);
+?>
+  <h1><?= $titre ?></h1>
 
-	<h1>Liste Des Salles</h1>
 	
