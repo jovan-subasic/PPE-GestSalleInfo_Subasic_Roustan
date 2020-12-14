@@ -4,32 +4,39 @@
    <head>
       <meta charset="utf-8" />
       <style>
-         *{
-            font-family:arial;
-         }
-         body{
-            margin:20px;
-         }
-         input{
-            border:solid 1px #2222AA;
-            margin-bottom:10px;
-            padding:16px;
-            outline:none;
-            border-radius:6px;
-         }
-         .erreur{
-            color:#CC0000;
-            margin-bottom:10px;
-         }
-         a{
-            font-size:12pt;
-            color:#EE6600;
-            text-decoration:none;
-            font-weight:normal;
-         }
-         a:hover{
-            text-decoration:underline;
-         }
+         *
+        form {
+            width:100%;
+            padding: 30px;
+            border: 1px solid #f1f1f1;
+            background: #fff;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        /* Full-width inputs */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        input[type=submit] {
+            background-color: #53af57;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type=submit]:hover {
+            background-color: white;
+            color: #53af57;
+            border: 1px solid #53af57;
+        }
       </style>
    </head>
   
@@ -38,7 +45,7 @@
       <form action="./?action=connexion" method="POST">
         <input type="text" name="pseudoU" placeholder="nom d'utilisateur" /><br />
         <input type="password" name="mdpU" placeholder="Mot de passe"  /><br />
-        <input type="submit" />
+        <input type="submit" value="Connexion" />
       </form>
 
 </html>
