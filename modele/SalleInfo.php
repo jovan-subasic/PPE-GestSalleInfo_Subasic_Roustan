@@ -18,10 +18,10 @@ class SalleInfo
         $this->nomSalle = $nomSalle;
         $this->nbPoste = $nbPoste;
         $this->indIP = $indIP;
-        $this->nbPoste = $room_name;
-        $this->nbPoste = $sort_key;
-        $this->nbPoste = $description;
-        $this->nbPoste = $capacity;
+        $this->room_name = $room_name;
+        $this->sort_key = $sort_key;
+        $this->description = $description;
+        $this->capacity = $capacity;
 
     }
     
