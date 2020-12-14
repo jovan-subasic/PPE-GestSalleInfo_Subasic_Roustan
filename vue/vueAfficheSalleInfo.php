@@ -11,9 +11,9 @@
 			<th>NbPoste</th>
 			<th>IndIP</th>
 			<th>Room_name</th>
-      <th>Sort_key</th>
-      <th>Description</th>
-      <th>Capacity</th>
+      		<th>Sort_key</th>
+     		<th>Description</th>
+      		<th>Capacity</th>
 		</tr>
 	
 		<?php
