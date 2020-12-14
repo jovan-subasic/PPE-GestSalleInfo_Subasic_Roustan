@@ -7,7 +7,8 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 require_once("$racine/modele/SalleInfoManager.php");
 $titre= "Liste des salles";
 $salleinfoManager= new SalleInfoManager();
-$salleinfos=$salleinfoManager->getList();
+$salleinfos=$salleinfoManager->getList(); 
+//var_dump($salleinfos);
 
 include "$racine/vue/header.php";
 include "$racine/vue/vueAfficheSalleInfo.php";
