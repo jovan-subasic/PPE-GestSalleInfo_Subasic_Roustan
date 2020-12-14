@@ -5,6 +5,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="./?action=connexion">Connexion <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="./?action=accueil">Accueil <span class="sr-only">(current)</span></a>
       </li>
