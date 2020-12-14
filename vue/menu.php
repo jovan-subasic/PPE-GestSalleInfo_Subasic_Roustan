@@ -11,6 +11,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="./?action=salleinfo">Salle<span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./?action=gestion">Gestion<span class="sr-only">(current)</span></a>
+      </li>
     </ul>
   </div>
 </nav>
