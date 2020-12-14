@@ -12,8 +12,13 @@
 			<th>IndIP</th>
 			<th>Room_name</th>
       		<th>Sort_key</th>
+<<<<<<< HEAD
       		<th>Description</th>
      		<th>Capacity</th>
+=======
+     		<th>Description</th>
+      		<th>Capacity</th>
+>>>>>>> 958bb8fec508c41bc19be6d397543fa0db120116
 		</tr>
 	
 		<?php
