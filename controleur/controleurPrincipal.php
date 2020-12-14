@@ -3,9 +3,6 @@ function controleurPrincipal($action) {
     $lesActions = array();
     $lesActions["defaut"] = "accueil.php";
     $lesActions["accueil"] = "accueil.php";
-    $lesActions["authentification"]="authentification.php";
-    $lesActions["connexion"] = "connexion.php";
-    $lesActions["deconnexion"] = "deconnexion.php";
     $lesActions["salleinfo"]="afficheSalleInfo.php";
 
 
