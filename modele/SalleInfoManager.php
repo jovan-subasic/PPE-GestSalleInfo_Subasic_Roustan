@@ -19,7 +19,7 @@ class SalleInfoManager extends Manager
         $q = $this->getPDO()->query('SELECT s.id, nSalle, nomSalle, nbPoste, indIP, room_name, sort_key, description, capacity  FROM salle s inner join mrbs_room mrbs on mrbs.id = s.id');
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $sallesinfos[$donnees['id']] = new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'], $donnees['room_name'], $donnees['sort_key'], $donnees['description'], $donnees['capacity'] );
+           $salleinfos[$donnees['id']] = new SalleInfo ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'], $donnees['room_name'], $donnees['sort_key'], $donnees['description'], $donnees['capacity'] );
         }
         return $salleinfos;
     }
