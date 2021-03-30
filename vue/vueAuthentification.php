@@ -2,15 +2,18 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <html>
-    <div class="container">
-      <h1>Authentification</h1>
+        <div class="container">
+        <h1>Authentification</h1>
 
-        <form action="./?action=connexion" method="POST">
-        <input type="text" name="pseudoU" placeholder="nom d'utilisateur" /><br />
-        <input type="password" name="mdpU" placeholder="Mot de passe"  /><br />
-        <input type="submit" value="Connexion" />
-        </form>
-    </div>
+            <form action="./?action=connexion" method="POST">
+
+                <input type="text" name="pseudo" placeholder="nom d'utilisateur" /><br />
+                <input type="password" name="mdp" placeholder="Mot de passe"  /><br />
+                <input type="submit" value="Connexion" />
+                
+            </form>
+        </div>
+
     </body>
 </html>
 
