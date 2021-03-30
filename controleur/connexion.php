@@ -3,6 +3,16 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine="..";
 }
 
+if (isset($_POST["pseudo"]) && isset($_POST["mdp"])){
+    $pseudo=$_POST["pseudo"];
+    $mdp=$_POST["mdp"];
+}
+else
+{
+    $pseudo="";
+    $mdp="";
+}
+
 
 
 
