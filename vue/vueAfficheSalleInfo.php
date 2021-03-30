@@ -6,8 +6,8 @@
 			
 		<tr>
 			<th>ID</th>
-			<th>NumSalle</th>
-			<th>NomSalle</th>
+			<th>Numéro de Salle</th>
+			<th>Nom de la Salle</th>
 			<th>Nombre de Poste</th>
 			<th>IndIP</th>
 			<th>Room_name</th>
