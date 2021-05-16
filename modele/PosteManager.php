@@ -25,5 +25,22 @@ class PosteManager extends Manager
         return $postes;
     }
     
+    public function AjouterPoste($nPoste, $nomPoste, $indIP, $ad,$typePoste,$nSalle,$nbLog)
+    {
+        
+        $q = $this->getPDO()->prepare('INSERT INTO poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle, nbLog) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle, :nbLog)');
+        $q->execute(array(
+            'nPoste' => $nPoste,
+            'nomPoste' => $nomPoste,
+            'indIP' => $indIP,
+            'ad' => $ad,
+            'typePoste' => $typePoste,
+            'nSalle' => $nSalle,
+            'nbLog' => $nbLog
+            ));
+
+        echo 'Le Poste a bien été ajouté !';
+
+    }
 }
 ?>

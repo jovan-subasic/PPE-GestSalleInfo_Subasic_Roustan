@@ -1,13 +1,41 @@
-<form action="vue/ResultAfficheGestion.php" method="post">
+<pre>
+    <?php var_dump($_POST)?>
+</pre>
+
+<h3>Ajouter un poste:</h3>
+
+<form action="vue/vueAfficheGestion.php" method="POST">
+
 <p>
-    <h3>Poste à ajouter:</h3>
-    <p>Entrez un numéro du poste: </p><input type="text" name="nPoste" />
-    <p>Entrez un nom de poste: </p><input type="text" name="nomPoste" />
-    <p>Entrez un indIP: </p><input type="text" name="indIP" />
-    <p>Entrez un ad: </p><input type="text" name="ad" />
-    <p>Etrez un type de poste: </p><input type="text" name="typePoste" />
-    <p>Entrez un numéro de salle: </p><input type="text" name="nSalle" />
-    <p>Entrez un nbLog: </p><input type="text" name="nbLog" />
-    <input type="submit" value="Submit" />
+    
+    <input type="text" name="Enter_nPoste" placeholder="Numéro du poste" />
+    
+    <input type="text" name="Enter_nomPoste" placeholder="Nom de poste" />
+    
+    <input type="text" name="Enter_indIP" placeholder="indIP" />
+    
+    <input type="text" name="Enter_ad" placeholder="ad" />
+    
+    <input type="text" name="Enter_typePoste" placeholder="Type de poste" />
+    
+    <?php
+    /*Combo Box*/
+    /*<input type=text list=browsers >
+        <datalist id=browsers >
+            <option> BeOs
+            <option> NC
+            <option> PCNT
+            <option> PCWS
+            <option> TX
+            <option> UNIX
+    </datalist>*/ ?>
+   
+    <input type="text" name="Enter_nSalle" placeholder="Numéro salle où sera situé le Poste" />
+    
+    <input type="number" name="Enter_nbLog" placeholder="Nombre de logiciel" />
+    
+    <button type="submit"> Créer le Poste </button>
+
 </p>
+
 </form>
