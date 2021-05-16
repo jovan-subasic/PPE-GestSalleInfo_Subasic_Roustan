@@ -1,45 +1,35 @@
-
-	<div class="content">
+<div class="content">
 		<div class="container-fluid"> 
 			<div class="header"><!---------------------------------------------Petit Materiel----------------------------------------------------------->
-				<h4 class="title">Liste Salle
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
-					<path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-					<path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
-					<path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
-					</svg>    
-				</h4>
+				<h4 class="title">Liste de poste dans la salle <?php echo  $id?>
+</h4>
 			</div>    
 			<div class="toggle">
 				<div class="content">
 					<table id="datatables_salle" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; text-align: center;"> 
 						<thead>
 							<tr>
-								<th class="text-center">n°Salle</th>
-								<th class="text-center">Nom de Salle</th>
-								<th class="text-center">Nombre de Poste</th>
+								<th class="text-center">n°Poste</th>
+								<th class="text-center">Nom du Poste</th>
 								<th class="text-center">IP</th>
-								<th class="text-center">Room Name</th>
-								<th class="text-center">Sort-key</th>
-								<th class="text-center">Description</th>
-								<th class="text-center">Capacité</th>
+								<th class="text-center">ad</th>
+								<th class="text-center">Type du Poste</th>
+								<th class="text-center">Nombre de logiciel(s)</th>
 								<!-- <th class="text-center">Action</th> -->
 							</tr>
 						</thead>
 						<tbody>
 						<?php
-							foreach ($salleinfos as $salleinfo)
+							foreach ($postes as $poste)
 							{
 						?> 
 						<tr>
-							<td class="edit"><?php echo $salleinfo->getNSalle() ?></td>
-							<td class="edit"><?php echo $salleinfo->getNomSalle() ?></td>
-							<td class="edit"><?php echo $salleinfo->getNbPoste() ?></td>
-							<td class="edit"><?php echo $salleinfo->getIndIP() ?></td>
-							<td class="edit"><?php echo $salleinfo->getRoom_name() ?></td>
-							<td class="edit"><?php echo $salleinfo->getSort_key() ?></td>
-							<td class="edit"><?php echo $salleinfo->getDescription() ?></td>
-							<td class="edit"><?php echo $salleinfo->getCapacity() ?></td> 
+							<td class="edit"><?php echo $poste->getNPoste() ?></td>
+							<td class="edit"><?php echo $poste->getNomPoste() ?></td>
+							<td class="edit"><?php echo $poste->getindIPoste() ?></td>
+							<td class="edit"><?php echo $poste->getAd() ?></td>
+							<td class="edit"><?php echo $poste->getTypePoste() ?></td>
+							<td class="edit"><?php echo $poste->getNbLog() ?></td> 
 							<!-- <td class="text-right">
 								<a href="#" class="btn-link btn-danger remove"><i class="fa fa-times"></i></a>
 							</td> -->
