@@ -6,7 +6,7 @@
 			</div>    
 			<div class="toggle">
 				<div class="content">
-					<table id="datatables_salle" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; text-align: center;"> 
+					<table id="datatables_poste" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%; text-align: center;"> 
 						<thead>
 							<tr>
 								<th class="text-center">n°Poste</th>
@@ -49,7 +49,7 @@
 
     
     $(document).ready(function() {
-        $('#datatables_salle').DataTable({
+        $('#datatables_poste').DataTable({
             "pagingType": "full_numbers",
             "lengthMenu": [
                 [10, 25, 50, -1],
@@ -89,32 +89,7 @@
         });
         
 
-        var table = $('#datatables_salle').DataTable();
-
-        // Edit record
-        table.on('click', '.edit', function() {
-            $tr = $(this).closest('tr');
-
-            if ($tr.hasClass('child')) {
-                $tr = $tr.prev('.parent');
-            }
-
-            var data = table.row($tr).data();
-            var myWindow = window.open("?action=postebysalle&nSalle="+ data[0], "_self");
-        });
-
-        // table.on('click', '.remove', function(e) {
-        //     $tr = $(this).closest('tr');
-
-        //     if ($tr.hasClass('child')) {
-        //         $tr = $tr.prev('.parent');
-        //     }
-        //     if (confirm("Voulez-vous supprimer cet élément ?")) {
-    
-        //         var data = table.row($tr).data();
-        //         var myWindow = window.open("../../../Model/forms/form_suppression-materiel.php?id=" + data[0], "_self");
-	    //     }
-        // });
+        
 
     })
 
