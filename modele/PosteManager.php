@@ -44,7 +44,7 @@ class PosteManager extends Manager
 
     public function ModifierPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
     {
-        
+        $q = $this->getPDO()->prepare('UPDATE poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle)');
     }
 }
 ?>
