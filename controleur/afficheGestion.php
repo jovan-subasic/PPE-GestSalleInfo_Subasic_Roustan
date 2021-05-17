@@ -8,9 +8,9 @@ $titre= "Gestion";
 
 $posteManager= new PosteManager();
 
-if (!empty($_POST['Enter_nPoste']) && !empty($_POST['Enter_nomPoste']) && !empty($_POST['Enter_indIP']) && !empty($_POST['Enter_ad']) && !empty($_POST['Enter_typePoste']) && !empty($_POST['Enter_nSalle']) && !empty($_POST['Enter_nbLog']))
+if (!empty($_POST['Enter_nPoste']) && !empty($_POST['Enter_nomPoste']) && !empty($_POST['Enter_indIP']) && !empty($_POST['Enter_ad']) && !empty($_POST['Enter_typePoste']) && !empty($_POST['Enter_nSalle']))
 {
-    $posteManager->AjouterPoste($_POST['Enter_nPoste'], $_POST['Enter_nomPoste'], $_POST['Enter_indIP'], $_POST['Enter_ad'], $_POST['Enter_typePoste'], $_POST['Enter_nSalle'], $_POST['Enter_nbLog']);
+    $ajouter=$posteManager->AjouterPoste($_POST['Enter_nPoste'], $_POST['Enter_nomPoste'], $_POST['Enter_indIP'], $_POST['Enter_ad'], $_POST['Enter_typePoste'], $_POST['Enter_nSalle']);
 }
 
 

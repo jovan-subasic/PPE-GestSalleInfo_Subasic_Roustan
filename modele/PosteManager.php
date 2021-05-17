@@ -25,21 +25,26 @@ class PosteManager extends Manager
         return $postes;
     }
     
-    public function AjouterPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle,$Enter_nbLog)
+    public function AjouterPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
     {
         
-        $q = $this->getPDO()->prepare('INSERT INTO poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle, nbLog) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle, :nbLog)');
+        $q = $this->getPDO()->prepare('INSERT INTO poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle)');
         $q->execute(array(
-            'Enter_nPoste' => $Enter_nPoste,
-            'Enter_nomPoste' => $Enter_nomPoste,
-            'Enter_indIP' => $Enter_indIP,
-            'Enter_ad' => $Enter_ad,
-            'Enter_typePoste' => $Enter_typePoste,
-            'Enter_nSalle' => $Enter_nSalle,
-            'Enter_nbLog' => $Enter_nbLog));
+            'nPoste' => $Enter_nPoste,
+            'nomPoste' => $Enter_nomPoste,
+            'indIP' => $Enter_indIP,
+            'ad' => $Enter_ad,
+            'typePoste' => $Enter_typePoste,
+            'nSalle' => $Enter_nSalle
+            ));
 
         echo 'Le Poste a bien été ajouté !';
 
+    }
+
+    public function ModifierPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
+    {
+        
     }
 }
 ?>

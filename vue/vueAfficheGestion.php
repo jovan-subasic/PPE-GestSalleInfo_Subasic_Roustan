@@ -1,10 +1,8 @@
-<pre>
-    <?php var_dump($_POST)?>
-</pre>
+
 
 <h3>Ajouter un poste:</h3>
 
-<form action="vue/vueAfficheGestion.php" method="POST">
+<form action="./?action=gestion" method="POST">
 
 <p>
     
@@ -32,7 +30,7 @@
    
     <input type="text" name="Enter_nSalle" placeholder="Numéro salle où sera situé le Poste" />
     
-    <input type="number" name="Enter_nbLog" placeholder="Nombre de logiciel" />
+    
     
     <button type="submit"> Créer le Poste </button>
 
@@ -40,3 +38,6 @@
 
 </form>
 
+<pre>
+    <?php var_dump($_POST)?>
+</pre>
