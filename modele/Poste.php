@@ -17,8 +17,8 @@ class Poste
         $this->nomPoste =  $nomPoste;
         $this->indIP = $indIP;
         $this->ad = $ad;
-        $this->typePoste = $indIP;
-        $this->nSalle = $typePoste;
+        $this->typePoste = $typePoste;
+        $this->nSalle = $nSalle;
         $this->nbLog = $nbLog;
 
     }
