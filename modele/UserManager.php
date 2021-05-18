@@ -37,17 +37,30 @@ class UserManager extends Manager
 
     function is_logged() : bool
     {
-        return true;
+        if (isset($_SESSION['pseudo']))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     function is_admin() : bool
     {
-        return true;
+        if($this->is_logged())
+        {
+            if (isset($_SESSION['rank']) && $_SESSION['rank'] == 0 )
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    public function ModifierPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
-    {
-        
-    }
 }
 ?>
