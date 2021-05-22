@@ -42,9 +42,18 @@ class PosteManager extends Manager
 
     }
 
-    public function ModifierPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
+    public function ModifierPoste($Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle, $id)
     {
-        $q = $this->getPDO()->prepare('UPDATE poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle)');
+        $q = $this->getPDO()->prepare('UPDATE poste SET nomPoste = :nomPoste, indIP = :indIP, ad = :ad, typePoste = :typePoste, nSalle = :nSalle WHERE nPoste = "'.$id.'"');
+        $q->execute(array(
+            'nomPoste' => $Enter_nomPoste,
+            'indIP' => $Enter_indIP,
+            'ad' => $Enter_ad,
+            'typePoste' => $Enter_typePoste,
+            'nSalle' => $Enter_nSalle
+            ));
+
+        echo 'Le Poste a bien été mis à jour !';
     }
 }
-?>
+?> 
