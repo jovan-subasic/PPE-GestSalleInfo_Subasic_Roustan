@@ -7,6 +7,9 @@ function controleurPrincipal($action) {
     $lesActions["salleinfo"]="afficheSalleInfo.php";
     $lesActions["gestion"]="afficheGestion.php";
     $lesActions["postebysalle"]="affichePosteBySalle.php";
+    $lesActions["updateposte"]="affichePosteUpdate.php";
+    $lesActions["redupdateposte"]="afficheRedPosteUpdate.php";
+
 
 
     if (array_key_exists($action, $lesActions)) {

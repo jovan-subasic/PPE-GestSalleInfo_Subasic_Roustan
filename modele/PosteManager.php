@@ -13,6 +13,8 @@ class PosteManager extends Manager
         return new Poste ($donnees['id'], $donnees['nSalle'], $donnees['nomSalle'], $donnees['nbPoste'], $donnees['indIP'], $donnees['room_name'], $donnees['sort_key'], $donnees['description'], $donnees['capacity'] );
     }*/
   
+
+    //id clique sur le tableau
     public function getListPoste($id) //instancie une collection d'objets postes
     {
         $postes = [];
@@ -24,6 +26,10 @@ class PosteManager extends Manager
         }
         return $postes;
     }
+
+    
+
+    
     
     public function AjouterPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
     {
@@ -55,5 +61,19 @@ class PosteManager extends Manager
 
         echo 'Le Poste a bien été mis à jour !';
     }
+    
+
+    public function getListPostes() //instancie une collection d'objets postes
+    {
+        $lespostes = [];
+        $q = $this->getPDO()->query('SELECT nPoste, nomPoste, p.indIP, ad, typePoste, p.nSalle, nbLog  FROM poste p inner join segment seg on seg.indIP = p.indIP inner join salle s on seg.indIP = s.indIP');
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+           $lespostes[$donnees['nPoste']] = new Poste ($donnees['nPoste'], $donnees['nomPoste'], $donnees['indIP'], $donnees['ad'], $donnees['typePoste'], $donnees['nSalle'], $donnees['nbLog']);
+        }
+        return $lespostes;
+    }
+    
+
 }
 ?> 
