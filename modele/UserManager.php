@@ -29,7 +29,7 @@ class UserManager extends Manager
         return false;
     }
 
-    function clean_php_session() : void
+    function clean_php_session() 
     {
         session_unset();
         session_destroy();
