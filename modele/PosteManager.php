@@ -30,33 +30,37 @@ class PosteManager extends Manager
     
 
     
-    
-    public function AjouterPoste($Enter_nPoste, $Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle)
+    //Fonction d'ajout d'un Poste
+    public function AjouterPoste($Add_nPoste, $Add_nomPoste, $Add_indIP, $Add_ad, $Add_typePoste,$Add_nSalle,$Add_nbLog)
     {
         
-        $q = $this->getPDO()->prepare('INSERT INTO poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle)');
+        $q = $this->getPDO()->prepare('INSERT INTO poste(nPoste, nomPoste, indIP, ad, typePoste, nSalle,nbLog) VALUES(:nPoste, :nomPoste, :indIP, :ad, :typePoste, :nSalle,:nbLog)');
         $q->execute(array(
-            'nPoste' => $Enter_nPoste,
-            'nomPoste' => $Enter_nomPoste,
-            'indIP' => $Enter_indIP,
-            'ad' => $Enter_ad,
-            'typePoste' => $Enter_typePoste,
-            'nSalle' => $Enter_nSalle
+            'nPoste' => $Add_nPoste,
+            'nomPoste' => $Add_nomPoste,
+            'indIP' => $Add_indIP,
+            'ad' => $Add_ad,
+            'typePoste' => $Add_typePoste,
+            'nSalle' => $Add_nSalle,
+            'nbLog' => $Add_nbLog
             ));
 
         echo 'Le Poste a bien été ajouté !';
 
     }
 
-    public function ModifierPoste($Enter_nomPoste, $Enter_indIP, $Enter_ad,$Enter_typePoste,$Enter_nSalle, $id)
+    //Fonction de modification d'un Poste
+    public function ModifierPoste($Update_nomPoste, $Update_indIP, $Update_ad,$Update_typePoste,$Update_nSalle,$Update_nbLog, $id)
     {
-        $q = $this->getPDO()->prepare('UPDATE poste SET nomPoste = :nomPoste, indIP = :indIP, ad = :ad, typePoste = :typePoste, nSalle = :nSalle WHERE nPoste = "'.$id.'"');
+        $q = $this->getPDO()->prepare('UPDATE poste SET nomPoste = :nomPoste, indIP = :indIP, ad = :ad, typePoste = :typePoste, nSalle = :nSalle, nbLog = :nbLog WHERE nPoste = :id');
         $q->execute(array(
-            'nomPoste' => $Enter_nomPoste,
-            'indIP' => $Enter_indIP,
-            'ad' => $Enter_ad,
-            'typePoste' => $Enter_typePoste,
-            'nSalle' => $Enter_nSalle
+            'nomPoste' => $Update_nomPoste,
+            'indIP' => $Update_indIP,
+            'ad' => $Update_ad,
+            'typePoste' => $Update_typePoste,
+            'nSalle' => $Update_nSalle,
+            'nbLog' => $Update_nbLog,
+            'id' => $id
             ));
 
         echo 'Le Poste a bien été mis à jour !';
@@ -74,6 +78,7 @@ class PosteManager extends Manager
         return $lespostes;
     }
     
+
 
 }
 ?> 

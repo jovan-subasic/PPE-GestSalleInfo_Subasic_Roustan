@@ -3,14 +3,17 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 require_once("$racine/modele/PosteManager.php");
+require_once("$racine/modele/SegmentManager.php");
+
 
 $titre= "Gestion";
 
+$SegmentManager= new SegmentManager();
 $posteManager= new PosteManager();
 
-if (!empty($_POST['Enter_nPoste']) && !empty($_POST['Enter_nomPoste']) && !empty($_POST['Enter_indIP']) && !empty($_POST['Enter_ad']) && !empty($_POST['Enter_typePoste']) && !empty($_POST['Enter_nSalle']))
+if (!empty($_POST['Add_nPoste']) && !empty($_POST['Add_nomPoste']) && !empty($_POST['Add_indIP']) && !empty($_POST['Add_ad']) && !empty($_POST['Add_typePoste']) && !empty($_POST['Add_nSalle']) && !empty($_POST['Add_nbLog']))
 {
-    $ajouter=$posteManager->AjouterPoste($_POST['Enter_nPoste'], $_POST['Enter_nomPoste'], $_POST['Enter_indIP'], $_POST['Enter_ad'], $_POST['Enter_typePoste'], $_POST['Enter_nSalle']);
+    $posteManager->AjouterPoste($_POST['Add_nPoste'], $_POST['Add_nomPoste'], $_POST['Add_indIP'], $_POST['Add_ad'], $_POST['Add_typePoste'], $_POST['Add_nSalle'], $_POST['Add_nbLog']);
 }
 
 

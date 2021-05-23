@@ -65,7 +65,7 @@ class SalleInfo
     
     //SET
     public function setId($id): void {
-        $this->nSalle = $id;
+        $this->id = $id;
     }
 
     public function setNSalle($nSalle): void {

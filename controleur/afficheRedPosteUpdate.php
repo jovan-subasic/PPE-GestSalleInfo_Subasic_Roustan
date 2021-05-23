@@ -2,9 +2,19 @@
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
-
+$id2 = htmlspecialchars($_GET['nPoste']); 
 
 require_once("$racine/modele/PosteManager.php");
+
+
+
+$posteManagerUpdate= new PosteManager();
+
+if (!empty($_POST['Update_nomPoste']) && !empty($_POST['Update_indIP']) && !empty($_POST['Update_ad']) && !empty($_POST['Update_TP']) && !empty($_POST['Update_nSalle']) && !empty($_POST['Update_nbLog']))
+{
+    $posteManagerUpdate->ModifierPoste($_POST['Update_nomPoste'],$_POST['Update_indIP'],$_POST['Update_ad'],$_POST['Update_TP'],$_POST['Update_nSalle'],$_POST['Update_nbLog'], $id2);
+}
+
 
 $titre = "Modification Poste n°";
 include "$racine/vue/header.php";
