@@ -22,8 +22,13 @@ $SalleInfoManager= new SalleInfoManager();
 if (!empty($_POST['Add_nPoste']) && !empty($_POST['Add_nomPoste']) && !empty($_POST['Add_indIP']) && !empty($_POST['Add_ad']) && !empty($_POST['Add_typePoste']) && !empty($_POST['Add_nSalle']) && !empty($_POST['Add_nbLog']))
 {
     $posteManager->AjouterPoste($_POST['Add_nPoste'], $_POST['Add_nomPoste'], $_POST['Add_indIP'], $_POST['Add_ad'], $_POST['Add_typePoste'], $_POST['Add_nSalle'], $_POST['Add_nbLog']);
-}
 
+    echo "Le poste a bien été ajouté";
+}
+else 
+{
+    echo "!!ERREUR!! Remplir tous les champs";
+}
 
 
 include "$racine/vue/header.php";

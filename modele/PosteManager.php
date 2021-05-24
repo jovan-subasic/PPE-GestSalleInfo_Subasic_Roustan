@@ -45,7 +45,7 @@ class PosteManager extends Manager
             'nbLog' => $Add_nbLog
             ));
 
-        echo 'Le Poste a bien été ajouté !';
+        echo 'Insert OK->';
 
     }
 
@@ -63,7 +63,7 @@ class PosteManager extends Manager
             'id' => $id
             ));
 
-        echo 'Le Poste a bien été mis à jour !';
+        echo 'Update OK->';
     }
     
 
