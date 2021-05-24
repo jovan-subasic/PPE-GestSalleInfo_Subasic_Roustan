@@ -20,9 +20,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="./?action=updateposte">Modifiier<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="./?action=redupdateposte">Yvan<span class="sr-only">(current)</span></a>
-      </li>
+      
     </ul>
   </div>
 </nav>
