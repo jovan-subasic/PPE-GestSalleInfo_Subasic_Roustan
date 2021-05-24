@@ -6,7 +6,14 @@ $id2 = htmlspecialchars($_GET['nPoste']);
 
 require_once("$racine/modele/PosteManager.php");
 
+require_once("$racine/modele/SegmentManager.php");
+require_once("$racine/modele/TypeManager.php");
+require_once("$racine/modele/SalleInfoManager.php");
 
+
+$TypeManager1=new TypeManager();
+$SegmentManager1= new SegmentManager();
+$SalleInfoManager1= new SalleInfoManager();
 
 $posteManagerUpdate= new PosteManager();
 

@@ -2,32 +2,6 @@
 
 <h3>Ajouter un poste:</h3>
 
-<form action="./?action=gestion" method="POST">
-
-<p>
-    
-    <input type="text" name="Add_nPoste" placeholder="Numéro du poste" />
-    
-    <input type="text" name="Add_nomPoste" placeholder="Nom de poste" />
-    
-    <input type="text" name="Add_indIP" placeholder="indIP" />
-    
-    <input type="text" name="Add_ad" placeholder="ad" />
-    
-    <input type="text" name="Add_typePoste" placeholder="Type de poste" />
-   
-    <input type="text" name="Add_nSalle" placeholder="Numéro salle où sera situé le Poste" />
-    
-    <input type="text" name="Add_nbLog" placeholder="Nombre de logiciels" />
-    
-    
-    
-    <button type="submit"> Créer le Poste </button>
-
-</p>
-
-</form>
-
 <pre>
     <?php var_dump($_POST)?>
 </pre>
@@ -49,7 +23,7 @@
         <div class="form-group">
           <label for="Add_indIP">IP :</label>
           <select class="form-control" name="Add_indIP" id="Add_indIP">
-            <?php $SegmentManager->getSegment() ?>
+            <?php $SegmentManager->getComboBoxSegment() ?>
           </select>
         </div>
 
@@ -62,11 +36,7 @@
         <div class="form-group">
           <label for="Add_typePoste">Type Poste :</label>
           <select class="form-control" name="Add_typePoste" id="Add_typePoste">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <?php $TypeManager->getComboBoxType() ?>
           </select>
         </div>
 
@@ -74,11 +44,7 @@
         <div class="form-group">
           <label for="Add_nSalle">n°Salle :</label>
           <select class="form-control" name="Add_nSalle" id="Add_nSalle">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <?php $SalleInfoManager->getComboBoxSalleInfo();?>
           </select>
         </div>
         

@@ -15,7 +15,7 @@ class SegmentManager extends Manager
         return $segments;
     }
     
-    public function getSegment() //instancie une collection d'objets segment
+    public function getComboBoxSegment() //instancie une collection d'objets segment
     {
         
         $q = $this->getPDO()->query('SELECT indIP, nomSegment, etage, nbSalle, nbPoste FROM segment');

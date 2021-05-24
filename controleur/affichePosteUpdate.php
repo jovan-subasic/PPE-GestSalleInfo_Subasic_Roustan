@@ -5,6 +5,9 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 $titre = "Modification Poste";
 require_once("$racine/modele/PosteManager.php");
+
+
+
 $posteManager1= new PosteManager();
 $lespostes=$posteManager1->getListPostes();
 
