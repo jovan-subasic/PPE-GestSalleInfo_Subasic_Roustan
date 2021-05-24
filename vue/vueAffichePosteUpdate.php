@@ -1,3 +1,7 @@
+<?php
+if($UserManager->is_logged())
+{  
+?>
   <div class="content">
     <div class="container-fluid">
       <div class="header">
@@ -38,6 +42,13 @@
       </div>
     </div>
   </div>
+<?php
+}
+else
+{
+    echo 'connexion requise';
+}
+?>
 
 <script type="text/javascript">
   $(document).ready(function(){
@@ -80,17 +91,26 @@
                  
     }
   });
-  var table = $('#datatables_poste').DataTable();
+  <?php
+  if($UserManager->is_admin())
+  {  
+  ?>
 
-  table.on('click', '.edit', function() {
-    $tr = $(this).closest('tr');
+    var table = $('#datatables_poste').DataTable();
 
-    if ($tr.hasClass('child')) {
-      $tr = $tr.prev('.parent');
+    table.on('click', '.edit', function() {
+      $tr = $(this).closest('tr');
+
+      if ($tr.hasClass('child')) {
+        $tr = $tr.prev('.parent');
+      }
+
+      var data = table.row($tr).data();
+      var myWindow = window.open("?action=redupdateposte&nPoste="+ data[0], "_self");
+    
+    <?php
     }
-
-    var data = table.row($tr).data();
-    var myWindow = window.open("?action=redupdateposte&nPoste="+ data[0], "_self");
+    ?>
   });
 
 

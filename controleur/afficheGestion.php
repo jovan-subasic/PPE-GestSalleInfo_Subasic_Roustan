@@ -6,7 +6,11 @@ require_once("$racine/modele/PosteManager.php");
 require_once("$racine/modele/SegmentManager.php");
 require_once("$racine/modele/TypeManager.php");
 require_once("$racine/modele/SalleInfoManager.php");
+require_once("$racine/modele/UserManager.php");
+require_once("$racine/modele/SalleInfoManager.php");
 
+$UserManager= new UserManager();
+$UserManager->init_php_session();
 
 
 

@@ -5,7 +5,11 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 $titre = "Modification Poste";
 require_once("$racine/modele/PosteManager.php");
+require_once("$racine/modele/UserManager.php");
+require_once("$racine/modele/SalleInfoManager.php");
 
+$UserManager= new UserManager();
+$UserManager->init_php_session();
 
 
 $posteManager1= new PosteManager();

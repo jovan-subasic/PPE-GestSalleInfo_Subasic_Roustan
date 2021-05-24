@@ -49,9 +49,13 @@ class UserManager extends Manager
     {
         if($this->is_logged())
         {
-            if (isset($_SESSION['rank']) && $_SESSION['rank'] == 0 )
+            if (isset($_SESSION['rank']) && $_SESSION['rank'] == 2 )
             {
                 return true;
+            }
+            else
+            {
+                return false;
             }
         }
         else

@@ -1,3 +1,7 @@
+<?php
+if($UserManager->is_logged())
+{  
+?>
 
 	<div class="content">
 		<div class="container-fluid"> 
@@ -51,7 +55,13 @@
 			</div>                                 
 		</div>          
 	</div>      
-
+<?php 
+}
+else
+{
+    echo 'connexion requise';
+}
+?>
 
 
 <script type="text/javascript">
@@ -98,35 +108,28 @@
         }
         });
         
+        <?php
+        if($UserManager->is_admin())
+        {  
+        ?>
+            var table = $('#datatables_salle').DataTable();
 
-        var table = $('#datatables_salle').DataTable();
+            // Edit record
+            table.on('click', '.edit', function() {
+                $tr = $(this).closest('tr');
 
-        // Edit record
-        table.on('click', '.edit', function() {
-            $tr = $(this).closest('tr');
+                if ($tr.hasClass('child')) {
+                    $tr = $tr.prev('.parent');
+                }
 
-            if ($tr.hasClass('child')) {
-                $tr = $tr.prev('.parent');
-            }
-
-            var data = table.row($tr).data();
-            var myWindow = window.open("?action=postebysalle&nSalle="+ data[0], "_self");
-        });
-
-        // table.on('click', '.remove', function(e) {
-        //     $tr = $(this).closest('tr');
-
-        //     if ($tr.hasClass('child')) {
-        //         $tr = $tr.prev('.parent');
-        //     }
-        //     if (confirm("Voulez-vous supprimer cet élément ?")) {
-    
-        //         var data = table.row($tr).data();
-        //         var myWindow = window.open("../../../Model/forms/form_suppression-materiel.php?id=" + data[0], "_self");
-	    //     }
-        // });
+                var data = table.row($tr).data();
+                var myWindow = window.open("?action=postebysalle&nSalle="+ data[0], "_self");
+            });
+        <?php 
+        }
+        ?>
 
     })
-
+    
 
 </script>
