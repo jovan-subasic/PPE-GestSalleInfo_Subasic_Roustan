@@ -13,8 +13,6 @@ class UserManager extends Manager
         $q->execute(array( 'name' => $pseudo ));
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
         return $donnees;
-
-
     }
 
     function init_php_session() : bool
