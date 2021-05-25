@@ -14,15 +14,6 @@ class TypeManager extends Manager
         }
         return $types;
     }
-    public function getComboBoxType() //instancie une collection d'objets type
-    {
-   
-        $q = $this->getPDO()->query('SELECT typeLP, nomType, tarif FROM types');
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
-        {
-            ?> <option value="<?php echo $donnees['typeLP']; ?>"> <?php echo $donnees['typeLP'] ?> </option> <?php
-        }
-        
-    }
+    
 }
 ?>
