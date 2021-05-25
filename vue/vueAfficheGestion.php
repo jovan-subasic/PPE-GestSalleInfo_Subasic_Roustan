@@ -28,7 +28,15 @@ if($UserManager->is_admin())
           <div class="form-group">
             <label for="Add_indIP">IP :</label>
             <select class="form-control" name="Add_indIP" id="Add_indIP">
-              <?php $SegmentManager->getComboBoxSegment() ?>
+            <?php
+            foreach ($IP as $IPS)
+            {
+                ?>
+                <option><?php echo $IPS->getindIP(); ?></option>
+                <?php
+            }
+                ?>
+              
             </select>
           </div>
 
@@ -41,7 +49,14 @@ if($UserManager->is_admin())
           <div class="form-group">
             <label for="Add_typePoste">Type Poste :</label>
             <select class="form-control" name="Add_typePoste" id="Add_typePoste">
-              <?php $TypeManager->getComboBoxType() ?>
+            <?php
+            foreach ($type as $types)
+            {
+                ?>
+                <option><?php echo $types->gettypeLP(); ?></option>
+                <?php
+            }
+                ?>
             </select>
           </div>
 
@@ -49,7 +64,14 @@ if($UserManager->is_admin())
           <div class="form-group">
             <label for="Add_nSalle">n°Salle :</label>
             <select class="form-control" name="Add_nSalle" id="Add_nSalle">
-              <?php $SalleInfoManager->getComboBoxSalleInfo();?>
+            <?php
+            foreach ($nSalle as $nSalles)
+            {
+                ?>
+                <option><?php echo $nSalles->getNSalle(); ?></option>
+                <?php
+            }
+                ?>
             </select>
           </div>
           
@@ -61,7 +83,7 @@ if($UserManager->is_admin())
 
 
           <div class="form-group">
-            <button type="submit"> Créer </button>
+            <button type="submit" name="creer"> Créer </button>
           </div>
 
       </div>

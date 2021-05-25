@@ -14,19 +14,31 @@ require_once("$racine/modele/SalleInfoManager.php");
 $TypeManager1=new TypeManager();
 $SegmentManager1= new SegmentManager();
 $SalleInfoManager1= new SalleInfoManager();
-
 $posteManagerUpdate= new PosteManager();
 
-if (!empty($_POST['Update_nomPoste']) && !empty($_POST['Update_indIP']) && !empty($_POST['Update_ad']) && !empty($_POST['Update_TP']) && !empty($_POST['Update_nSalle']) && !empty($_POST['Update_nbLog']))
-{
-    $posteManagerUpdate->ModifierPoste($_POST['Update_nomPoste'],$_POST['Update_indIP'],$_POST['Update_ad'],$_POST['Update_TP'],$_POST['Update_nSalle'],$_POST['Update_nbLog'], $id2);
-    echo"Le poste a bien été modifié!";
-}
-else
-{
-    echo "!!ERREUR!! Remplir tous les champs";
-}
+//utilisation pour combobox typeLP
+$type=$TypeManager1->getListType();
+//utilisation pour combobox indIP
+$IP=$SegmentManager1->getListSegment();
+//utilisation pour combobox nSalle
+$nSalle=$SalleInfoManager1->getList();
 
+
+
+$donneesPoste = $posteManagerUpdate->getPoste($id2);
+
+
+if(isset($_POST['modifier'])){
+    if (!empty($_POST['Update_nomPoste']) && !empty($_POST['Update_indIP']) && !empty($_POST['Update_ad']) && !empty($_POST['Update_TP']) && !empty($_POST['Update_nSalle']) && !empty($_POST['Update_nbLog']))
+    {
+        $posteManagerUpdate->ModifierPoste($_POST['Update_nomPoste'],$_POST['Update_indIP'],$_POST['Update_ad'],$_POST['Update_TP'],$_POST['Update_nSalle'],$_POST['Update_nbLog'], $id2);
+        echo"Le poste a bien été modifié!";
+    }
+    else
+    {
+        echo "!!ERREUR!! Remplir tous les champs";
+    }
+}
 
 $titre = "Modification Poste n°";
 include "$racine/vue/header.php";

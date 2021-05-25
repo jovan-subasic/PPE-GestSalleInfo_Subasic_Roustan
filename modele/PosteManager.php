@@ -78,6 +78,14 @@ class PosteManager extends Manager
         return $lespostes;
     }
     
+    public function getPoste($nposte)
+    {
+        
+        $q = $this->getPDO()->prepare('select * from poste where nPoste = :id');
+        $q->execute(array( 'id' => $nposte ));
+        $donnees = $q->fetch(PDO::FETCH_ASSOC);
+        return $donnees;
+    }
 
 
 }
