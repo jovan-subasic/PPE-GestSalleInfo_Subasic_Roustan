@@ -24,16 +24,16 @@ class SalleInfoManager extends Manager
         }
         return $salleinfos;
     }
-    public function getComboBoxSalleInfo() //instancie une collection d'objets salles
-    {
+    // public function getComboBoxSalleInfo() //instancie une collection d'objets salles
+    // {
        
-        $q = $this->getPDO()->query('SELECT s.id, nSalle, nomSalle, nbPoste, indIP, room_name, sort_key, description, capacity  FROM salle s inner join mrbs_room mrbs on mrbs.id = s.id');
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
-        {
-            ?> <option value="<?php echo $donnees['nSalle']; ?>"> <?php echo $donnees['nSalle'] ?> </option> <?php
+    //     $q = $this->getPDO()->query('SELECT s.id, nSalle, nomSalle, nbPoste, indIP, room_name, sort_key, description, capacity  FROM salle s inner join mrbs_room mrbs on mrbs.id = s.id');
+    //     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+    //     {
+    //          <!-- <option value="<?php //echo $donnees['nSalle'];"> <?php // echo $donnees['nSalle']  </option> <?php
 
-        }
+    //     }
         
-    }
+    // }
 }
 ?>
