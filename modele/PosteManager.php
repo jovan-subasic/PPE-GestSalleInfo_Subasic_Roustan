@@ -87,6 +87,8 @@ class PosteManager extends Manager
         return $donnees;
     }
 
-
+    //supprimer un poste 
+    //DELETE FROM table 
+    //WHERE CONDITION     
 }
 ?> 

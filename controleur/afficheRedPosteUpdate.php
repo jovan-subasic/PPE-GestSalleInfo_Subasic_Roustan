@@ -24,7 +24,7 @@ $IP=$SegmentManager1->getListSegment();
 $nSalle=$SalleInfoManager1->getList();
 
 
-
+//est utilisé pour afficher les anciennes données 
 $donneesPoste = $posteManagerUpdate->getPoste($id2);
 
 
