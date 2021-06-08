@@ -1,6 +1,6 @@
 <div class="content">
 		<div class="container-fluid"> 
-			<div class="header"><!---------------------------------------------Petit Materiel----------------------------------------------------------->
+			<div class="header">
 				<h4 class="title">Liste de poste dans la salle <?php echo  $id?>
 </h4>
 			</div>    
